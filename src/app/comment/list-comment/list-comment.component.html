@@ -1,0 +1,33 @@
+<a [routerLink]="['../addcomment']" class="btn btn-outline-dark" style="float: right; margin-bottom: 10px;">ADD
+    COMMENT</a>
+<div class="p-3 mb-2 bg-secondary text-white">
+    <table class="table table-hover table-dark">
+        <thead>
+            <tr>
+                <th scope="col">Comment Id</th>
+                <th scope="col">Image Id</th>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Create Date</th>
+                <th scope="col">Active</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let comm of commentService.comment">
+                <td>{{comm.commentId}}</td>
+                <td>{{comm.imageId}}</td>
+                <td>{{comm.title}}</td>
+                <td>{{comm.description}}</td>
+                <td>{{comm.createDate}}</td>
+                <td>{{comm.active}}</td>
+                <td>
+                    <a type="button"  (click)="editComment(comm.commentId)"
+                    style="margin-left: 100px;"><i class="bi bi-pencil-square" style="font-size: 20px; -webkit-text-stroke-width: 0.2px; color: rgb(255, 0, 0); opacity: 1;"></i></a>
+                </td>
+
+            </tr>
+
+        </tbody>
+    </table>
+</div>
